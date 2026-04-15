@@ -3,21 +3,21 @@ const projects = [
     id: 1,
     name: 'Gone Fishing',
     description: 'A fishing side scroller made in Godot. Follow its development on Github!',
-    tag: 'Godot',
+    tags: ['Godot', 'GDScript'],
     link: 'https://github.com/prodcautious/GoneFishingSideScroller',
   },
   {
     id: 2,
-    name: 'Another Project',
-    description: 'A short description of this project. What problem does it solve?',
-    tag: 'Python',
+    name: 'Reclaim',
+    description: 'A small-scale 2D RPG created in memory of some folks. Looking to revisit this soon.',
+    tags: ['Godot', 'GDScript'],
     link: 'https://github.com/yourhandle/project',
   },
   {
     id: 3,
-    name: 'This Portfolio',
-    description: 'A modular React portfolio site with reusable components and clean design.',
-    tag: 'React',
+    name: 'This Website',
+    description: 'A React based portfolio built to show off my work and skills.',
+    tags: ['React'],
     link: 'https://github.com/yourhandle/portfolio',
   },
 ];
@@ -26,14 +26,31 @@ export default function Projects() {
   return (
     <section id="projects" style={styles.section}>
       <p style={styles.label}>Projects</p>
+
       <div style={styles.list}>
         {projects.map((project) => (
-          <a href={project.link} target="_blank" rel="noreferrer" key={project.id} style={styles.card}>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            key={project.id}
+            style={styles.card}
+          >
             <div>
-              <p style={styles.name}>{project.name}</p>
+              {project.name && (
+                <p style={styles.name}>{project.name}</p>
+              )}
+
               <p style={styles.description}>{project.description}</p>
             </div>
-            <span style={styles.tag}>{project.tag}</span>
+
+            <div style={styles.tags}>
+              {project.tags.map((tag, index) => (
+                <span key={index} style={styles.tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
           </a>
         ))}
       </div>
@@ -84,6 +101,12 @@ const styles = {
     fontSize: '13px',
     color: '#777',
     lineHeight: '1.6',
+  },
+  tags: {
+    display: 'flex',
+    gap: '0.5rem',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-end',
   },
   tag: {
     fontSize: '11px',

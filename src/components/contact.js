@@ -3,9 +3,9 @@ import { FiLinkedin } from 'react-icons/fi';
 import { FiGithub } from 'react-icons/fi';
 
 const links = [
-  { id: 1, label: 'Email',    href: 'mailto:you@email.com',              icon: <FiMail size={16} /> },
+  { id: 1, label: 'Email',    href: 'mailto:blueorigin628@gmail.com',              icon: <FiMail size={16} /> },
   { id: 2, label: 'LinkedIn', href: 'https://linkedin.com/in/yourhandle', icon: <FiLinkedin size={16} /> },
-  { id: 3, label: 'GitHub',   href: 'https://github.com/yourhandle',      icon: <FiGithub size={16} /> },
+  { id: 3, label: 'GitHub',   href: 'https://github.com/prodcautious',      icon: <FiGithub size={16} /> },
 ];
 
 export default function Contact() {
@@ -13,7 +13,7 @@ export default function Contact() {
     <section id="contact" style={styles.section}>
       <p style={styles.label}>Contact</p>
       <p style={styles.intro}>
-        Feel free to reach out — whether it's an opportunity, a question, or just to say hi.
+        Feel free to reach out!
       </p>
       <div style={styles.grid}>
         {links.map((item) => (

@@ -5,6 +5,7 @@ const skills = [
   'CSS',
   'Node.js',
   'Python',
+  'GDScript',
   'Git & GitHub',
   'SQL',
   'Unity',

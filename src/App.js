@@ -5,7 +5,7 @@ import Skills from './components/skills';
 import Projects from './components/projects';
 import Contact from './components/contact';
 
-export default function Hello() {
+export default function App() {
   return (
     <>
       <Navbar />
