@@ -11,14 +11,7 @@ const projects = [
     name: 'Reclaim',
     description: 'A small-scale 2D RPG created in memory of some folks. Looking to revisit this soon.',
     tags: ['Godot', 'GDScript'],
-    link: 'https://github.com/yourhandle/project',
-  },
-  {
-    id: 3,
-    name: 'This Website',
-    description: 'A React based portfolio built to show off my work and skills.',
-    tags: ['React'],
-    link: 'https://github.com/yourhandle/portfolio',
+    link: 'https://github.com/prodcautious/Reclaim_Beta',
   },
 ];
 

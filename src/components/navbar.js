@@ -6,6 +6,7 @@ export default function Navbar() {
         <a href="#about" style={styles.link}>About</a>
         <a href="#skills" style={styles.link}>Skills</a>
         <a href="#projects" style={styles.link}>Projects</a>
+        <a href="#gallery" style={styles.link}>Gallery</a>
         <a href="#contact" style={styles.contact}>Contact</a>
       </div>
     </nav>
@@ -24,6 +25,7 @@ const styles = {
     backgroundColor: '#fff',
     zIndex: 10,
   },
+
   name: {
     fontSize: '15px',
     fontWeight: '500',

@@ -2,7 +2,9 @@ export default function Hero() {
   return (
     <section style={styles.section}>
       <p style={styles.greeting}>Hi, I'm</p>
-      <h1 style={styles.name}>Nick Phillips</h1>
+      <h1 style={{ ...styles.name }} className="fade-in">
+        Nick Phillips
+      </h1>
       <p style={styles.tagline}>
         Developer based in New York. I make games in Godot and Unity.
       </p>
