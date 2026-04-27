@@ -1,51 +1,98 @@
-export default function Navbar() {
+import { useEffect, useState } from "react";
+import { Menu, MoonStar, Palette, SunMedium, X } from "lucide-react";
+import { navLinks } from "../data/portfolio";
+
+const themeIcons = {
+  light: SunMedium,
+  dark: MoonStar,
+  forest: Palette,
+};
+
+export default function Navbar({ theme, onThemeToggle }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const ThemeIcon = themeIcons[theme] || SunMedium;
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <nav style={styles.nav}>
-      <span style={styles.name}>Nick Phillips</span>
-      <div style={styles.links}>
-        <a href="#about" style={styles.link}>About</a>
-        <a href="#skills" style={styles.link}>Skills</a>
-        <a href="#projects" style={styles.link}>Projects</a>
-        <a href="#gallery" style={styles.link}>Gallery</a>
-        <a href="#contact" style={styles.contact}>Contact</a>
-      </div>
-    </nav>
+    <>
+      <header className="site-header">
+        <nav className="navbar">
+          <a className="brand-mark" href="#top">
+            Nick Phillips
+          </a>
+
+          <div className="navbar-links desktop-only">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="nav-link">
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="navbar-actions">
+            <button
+              type="button"
+              className="icon-button"
+              onClick={onThemeToggle}
+              aria-label={`Switch theme. Current theme: ${theme}`}
+              title={`Theme: ${theme}`}
+            >
+              <ThemeIcon size={18} />
+            </button>
+
+            <button
+              type="button"
+              className="icon-button mobile-only"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu size={18} />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <div
+        className={`mobile-menu-backdrop ${menuOpen ? "is-open" : ""}`}
+        onClick={closeMenu}
+        aria-hidden={!menuOpen}
+      />
+
+      <aside className={`mobile-menu ${menuOpen ? "is-open" : ""}`}>
+        <div className="mobile-menu-header">
+          <span className="brand-mark">Navigate</span>
+          <button
+            type="button"
+            className="icon-button"
+            onClick={closeMenu}
+            aria-label="Close menu"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        <div className="mobile-menu-links">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="mobile-nav-link"
+              onClick={closeMenu}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </aside>
+    </>
   );
 }
-
-const styles = {
-  nav: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '1.25rem 2rem',
-    borderBottom: '1px solid #e5e5e5',
-    position: 'sticky',
-    top: 0,
-    backgroundColor: '#fff',
-    zIndex: 10,
-  },
-
-  name: {
-    fontSize: '15px',
-    fontWeight: '500',
-  },
-  links: {
-    display: 'flex',
-    gap: '1.5rem',
-    alignItems: 'center',
-  },
-  link: {
-    fontSize: '14px',
-    color: '#555',
-    textDecoration: 'none',
-  },
-  contact: {
-    fontSize: '14px',
-    color: '#fff',
-    backgroundColor: '#111',
-    padding: '6px 14px',
-    borderRadius: '6px',
-    textDecoration: 'none',
-  },
-};
