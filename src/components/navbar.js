@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, MoonStar, Palette, SunMedium, X } from "lucide-react";
+import { Menu, MoonStar, Palette, Search, SunMedium, X } from "lucide-react";
 import { navLinks } from "../data/portfolio";
 
 const themeIcons = {
@@ -8,7 +8,13 @@ const themeIcons = {
   forest: Palette,
 };
 
-export default function Navbar({ theme, onThemeToggle }) {
+export default function Navbar({
+  theme,
+  onThemeToggle,
+  searchTerm,
+  onSearchChange,
+  onSearchSubmit,
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const ThemeIcon = themeIcons[theme] || SunMedium;
 
@@ -39,6 +45,23 @@ export default function Navbar({ theme, onThemeToggle }) {
           </div>
 
           <div className="navbar-actions">
+            <form
+              className="site-search"
+              onSubmit={(event) => {
+                event.preventDefault();
+                onSearchSubmit();
+              }}
+            >
+              <Search size={16} aria-hidden="true" />
+              <input
+                type="search"
+                value={searchTerm}
+                onChange={(event) => onSearchChange(event.target.value)}
+                placeholder="Search"
+                aria-label="Search portfolio"
+              />
+            </form>
+
             <button
               type="button"
               className="icon-button"

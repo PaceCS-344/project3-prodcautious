@@ -11,6 +11,7 @@ import MusicPlayer from "./components/music-player";
 const themes = ["light", "dark"];
 
 export default function App() {
+  const [searchTerm, setSearchTerm] = useState("");
   const [theme, setTheme] = useState(() => {
     if (typeof window === "undefined") {
       return "light";
@@ -30,14 +31,34 @@ export default function App() {
     setTheme(nextTheme);
   };
 
+  const jumpToFirstSearchMatch = () => {
+    if (!searchTerm.trim()) {
+      return;
+    }
+
+    window.setTimeout(() => {
+      const firstMatch = document.querySelector(".search-match");
+
+      if (firstMatch) {
+        firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 0);
+  };
+
   return (
     <div className="app-shell">
-      <Navbar theme={theme} onThemeToggle={cycleTheme} />
+      <Navbar
+        theme={theme}
+        onThemeToggle={cycleTheme}
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
+        onSearchSubmit={jumpToFirstSearchMatch}
+      />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
+        <About searchTerm={searchTerm} />
+        <Skills searchTerm={searchTerm} />
+        <Projects searchTerm={searchTerm} />
         <Gallery />
         <MusicPlayer />
         <Contact />

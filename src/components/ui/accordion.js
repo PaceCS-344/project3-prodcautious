@@ -52,7 +52,7 @@ export default function AccordionItem({
             rel="noreferrer"
             className="button button-secondary inline-button"
           >
-            View Project
+            View on GitHub
           </a>
         </div>
       </div>

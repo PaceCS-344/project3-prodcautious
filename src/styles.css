@@ -116,6 +116,37 @@ button {
   gap: 1.25rem;
 }
 
+.navbar-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.site-search {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0 0.75rem;
+  border: 3px solid var(--text);
+  background: var(--surface);
+  color: var(--muted);
+  box-shadow: 3px 3px 0 rgba(5, 9, 20, 0.16);
+}
+
+.site-search input,
+.project-tools input {
+  width: 11rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.site-search input::placeholder,
+.project-tools input::placeholder {
+  color: var(--muted);
+}
+
 .nav-link,
 .mobile-nav-link {
   text-decoration: none;
@@ -359,6 +390,33 @@ button {
   gap: 1rem;
 }
 
+.project-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.project-tools input {
+  width: min(100%, 21rem);
+  min-height: 2.75rem;
+  padding: 0 0.85rem;
+  border: 3px solid var(--text);
+  background: var(--surface);
+  box-shadow: 3px 3px 0 rgba(5, 9, 20, 0.16);
+}
+
+.project-status {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.search-match {
+  outline: 3px solid var(--accent);
+  outline-offset: 0.35rem;
+}
+
 .accordion-item,
 .music-player-card,
 .contact-button {
@@ -599,6 +657,14 @@ button {
   .section-shell {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .site-search input {
+    width: 7rem;
   }
 
   .hero {

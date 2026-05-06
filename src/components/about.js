@@ -1,6 +1,18 @@
-export default function About() {
+const aboutText = [
+  "Pace University web applications game development design",
+  "Godot side scroller Gone Fishing music production pixel art UI design",
+];
+
+export default function About({ searchTerm = "" }) {
+  const query = searchTerm.trim().toLowerCase();
+  const isMatch =
+    query && aboutText.some((text) => text.toLowerCase().includes(query));
+
   return (
-    <section id="about" className="section-shell">
+    <section
+      id="about"
+      className={`section-shell ${isMatch ? "search-match" : ""}`}
+    >
       <p className="section-label">About</p>
       <div className="stack-copy">
         <p className="section-copy">
