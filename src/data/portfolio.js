@@ -1,3 +1,5 @@
+const assetPath = (path) => `${process.env.PUBLIC_URL}${path}`;
+
 export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
@@ -39,7 +41,7 @@ export const projects = [
 
 export const galleryImages = [
   {
-    src: "/image-1.png",
+    src: assetPath("/image-1.png"),
     alt: "Planet Greava",
     title: "Planet Greava",
     medium: "Parallax",
@@ -47,7 +49,7 @@ export const galleryImages = [
     size: "wide",
   },
   {
-    src: "/image-2.png",
+    src: assetPath("/image-2.png"),
     alt: "Pond-side Fishing",
     title: "Pond-side Fishing",
     medium: "Scene",
@@ -55,7 +57,7 @@ export const galleryImages = [
     size: "tall",
   },
   {
-    src: "/image-3.png",
+    src: assetPath("/image-3.png"),
     alt: "Greava Tileset",
     title: "Greava Tileset",
     medium: "Level Design Study",
@@ -68,17 +70,17 @@ export const tracks = [
   {
     title: "Balance",
     subtitle: "Ambient",
-    src: "/balance.mp3",
+    src: assetPath("/balance.mp3"),
   },
   {
     title: "Boss Theme",
     subtitle: "Groovy",
-    src: "/boss-theme.wav",
+    src: assetPath("/boss-theme.wav"),
   },
   {
     title: "Day Theme",
     subtitle: "Ambient",
-    src: "/day_theme.mp3",
+    src: assetPath("/day_theme.mp3"),
   },
 ];
 
