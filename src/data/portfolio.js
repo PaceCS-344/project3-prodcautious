@@ -106,6 +106,16 @@ export const tracks = [
     subtitle: "Ambient",
     src: assetPath("/day_theme.mp3"),
   },
+  {
+    title: "Shop Theme",
+    subtitle: "Fun",
+    src: assetPath("/shop_theme.ogg"),
+  },
+  {
+    title: "The End",
+    subtitle: "Heartfelt",
+    src: assetPath("/ending.ogg"),
+  },
 ];
 
 export const contactLinks = [
