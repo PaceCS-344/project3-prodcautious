@@ -64,6 +64,30 @@ export const galleryImages = [
     position: "center",
     size: "square",
   },
+  {
+    src: assetPath("/image-4.gif"),
+    alt: "Animated Campfire",
+    title: "Animated Campfire",
+    medium: "16x Animated Sprite",
+    position: "center",
+    size: "square",
+  },
+  {
+    src: assetPath("/image-5.gif"),
+    alt: "Idle Animation",
+    title: "Idle Animation",
+    medium: "32x Animated Sprite",
+    position: "center",
+    size: "square",
+  },
+  {
+    src: assetPath("/image-6.gif"),
+    alt: "Walking Animation",
+    title: "Walking Animation",
+    medium: "Gait Cycle Study",
+    position: "center",
+    size: "square",
+  },
 ];
 
 export const tracks = [

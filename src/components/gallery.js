@@ -8,9 +8,9 @@ export default function Gallery() {
     <section id="gallery" className="section-shell">
       <p className="section-label">Gallery</p>
       <div className="section-heading">
-        <h2 className="section-title">Pixel art compilation</h2>
+        <h2 className="section-title">Art compilation</h2>
         <p className="section-copy compact-copy">
-          A small collection of scenes, environment work, and tileset pieces.
+          A small collection of scenes, environment work, characters, and tileset pieces.
         </p>
       </div>
 
